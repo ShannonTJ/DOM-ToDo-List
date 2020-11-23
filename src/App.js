@@ -8,6 +8,7 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [filter, setFilter] = useState("all");
   const [filterTasks, setFilterTasks] = useState([]);
+  const [animate, setAnimate] = useState(false);
 
   //filter tasks based on completion
   const filterHandler = () => {
@@ -58,8 +59,16 @@ function App() {
         inputText={inputText}
         setInputText={setInputText}
         setFilter={setFilter}
+        animate={animate}
+        setAnimate={setAnimate}
       />
-      <TodoList tasks={tasks} setTasks={setTasks} filterTasks={filterTasks} />
+      <TodoList
+        tasks={tasks}
+        setTasks={setTasks}
+        filterTasks={filterTasks}
+        animate={animate}
+        setAnimate={setAnimate}
+      />
     </div>
   );
 }

@@ -1,6 +1,14 @@
 import React from "react";
 
-const Form = ({ tasks, setTasks, inputText, setInputText, setFilter }) => {
+const Form = ({
+  tasks,
+  setTasks,
+  inputText,
+  setInputText,
+  setFilter,
+  animate,
+  setAnimate,
+}) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
@@ -18,6 +26,7 @@ const Form = ({ tasks, setTasks, inputText, setInputText, setFilter }) => {
   };
 
   const selectHandler = (event) => {
+    setAnimate(false);
     setFilter(event.target.value);
   };
 
