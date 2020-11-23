@@ -4,18 +4,19 @@ const Form = ({ tasks, setTasks, inputText, setInputText }) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    setTasks([
-      ...tasks,
-      {
-        id: new Date().getTime().toString(),
-        text: inputText,
-        completed: false,
-      },
-    ]);
+    if (inputText !== "") {
+      setTasks([
+        ...tasks,
+        {
+          id: new Date().getTime().toString(),
+          text: inputText,
+          completed: false,
+        },
+      ]);
+    }
     setInputText("");
   };
 
-  console.log(tasks);
   return (
     <form>
       <input
