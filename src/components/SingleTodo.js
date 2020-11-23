@@ -1,6 +1,6 @@
 import React from "react";
 
-const SingleTodo = ({ tasks, setTasks }) => {
+const SingleTodo = ({ tasks, setTasks, filterTasks }) => {
   const removeHandler = (id) => {
     //remove task from list
     setTasks(tasks.filter((task) => task.id !== id));
@@ -20,7 +20,7 @@ const SingleTodo = ({ tasks, setTasks }) => {
 
   return (
     <>
-      {tasks.map((task) => {
+      {filterTasks.map((task) => {
         const { id, text, completed } = task;
         return (
           <div key={id} className={`task ${task.completed ? "completed" : ""}`}>
