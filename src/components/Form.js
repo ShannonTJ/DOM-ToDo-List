@@ -1,14 +1,17 @@
 import React from "react";
+import { useGlobalContext } from "../context";
 
-const Form = ({
-  tasks,
-  setTasks,
-  inputText,
-  setInputText,
-  setFilter,
-  animate,
-  setAnimate,
-}) => {
+const Form = () => {
+  const {
+    tasks,
+    setTasks,
+    inputText,
+    setInputText,
+    setFilter,
+    setAnimate,
+  } = useGlobalContext();
+
+  //handle new items submitted to the list
   const submitHandler = (event) => {
     event.preventDefault();
 
@@ -25,6 +28,7 @@ const Form = ({
     setInputText("");
   };
 
+  //handle dropdown selection
   const selectHandler = (event) => {
     setAnimate(false);
     setFilter(event.target.value);

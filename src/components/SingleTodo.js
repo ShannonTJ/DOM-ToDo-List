@@ -1,16 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import { CSSTransitionGroup } from "react-transition-group";
+import { useGlobalContext } from "../context";
 
-const SingleTodo = ({ tasks, setTasks, filterTasks, animate, setAnimate }) => {
+const SingleTodo = () => {
+  const {
+    tasks,
+    setTasks,
+    filterTasks,
+    animate,
+    setAnimate,
+  } = useGlobalContext();
+
+  //remove task from list
   const removeHandler = (id) => {
     setAnimate(true);
-    //remove task from list
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
+  //toggle "completed" task value
   const checkHandler = (id) => {
     setAnimate(false);
-    //toggle "completed" task value
     setTasks(
       tasks.map((task) => {
         if (task.id === id) {

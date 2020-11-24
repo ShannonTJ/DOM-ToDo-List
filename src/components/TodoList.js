@@ -1,17 +1,11 @@
 import React from "react";
 import SingleTodo from "./SingleTodo";
 
-const TodoList = ({ tasks, setTasks, filterTasks, animate, setAnimate }) => {
+const TodoList = () => {
   return (
     <div className="task-container">
       <ul className="task-list">
-        <SingleTodo
-          tasks={tasks}
-          setTasks={setTasks}
-          filterTasks={filterTasks}
-          animate={animate}
-          setAnimate={setAnimate}
-        />
+        <SingleTodo />
       </ul>
     </div>
   );
